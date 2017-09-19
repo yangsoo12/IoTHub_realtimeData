@@ -327,8 +327,9 @@
                     // This is the part xml2Json comes in.
                     var JSONConvertedXML = $.xml2json(myXML);
 					
-                    g4_pm25 = JSONConvertedXML.body.items.item.pm25;
-                    if (g4_pm25 > 50) {
+                    //g4_pm25 = JSONConvertedXML.body.items.item.pm25;
+                    g4_pm25 = 60;
+			if (g4_pm25 > 50) {
                         $('#cai4').append("나쁨");
                     } else if (g4_pm25 > 15) {
                         $('#cai4').append("보통");
