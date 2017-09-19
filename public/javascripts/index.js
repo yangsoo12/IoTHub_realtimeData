@@ -55,7 +55,7 @@ $(document).ready(function () {
     title: {
       display: true,
       text: 'Temperature & pm2.5 Real-time Data',
-      fontSize: 36
+      fontSize: 15
     },
     scales: {
       yAxes: [{
