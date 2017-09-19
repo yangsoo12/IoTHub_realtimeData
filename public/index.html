@@ -273,8 +273,8 @@
                     var myXML = res.responseText;
                     // This is the part xml2Json comes in.
                     var JSONConvertedXML = $.xml2json(myXML);
-                    g2_pm10 = JSONConvertedXML.body.items.item.pm10;
-                    //alert(g2_pm10);
+                    //g2_pm10 = JSONConvertedXML.body.items.item.pm10;
+                    g2_pm10 = 120;
 
                     if (g2_pm10 > 80) {
                         $('#cai2').append("나쁨");
