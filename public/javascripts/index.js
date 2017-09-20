@@ -177,8 +177,25 @@ $(document).ready(function () {
 	  document.getElementById("rpm").innerHTML = obj.params.rpm;
 	  document.getElementById("rpm2").innerHTML = obj.params.rpm2;
 	  var time = obj.time;
-	  var subS = time.substring(11,19);
-      timeData.push(subS);
+	  var subS = time.substring(13,19);
+	  var hourS = time.substring(11,13);
+	  var vv = parseInt(hourS);
+	  var timeS = "";
+	  vv = vv - 3;
+	  if(vv<0)
+		{
+		  vv = vv + 24;
+		}
+
+		if(vv<10)
+		{
+			timeS = "0" + vv.toString() + subS;
+		}
+		else
+		{
+			timeS = vv.toString() + subS;
+		}
+      timeData.push(timeS);
       temperatureData.push(obj.params.Temperature);
       // only keep no more than 50 points in the line chart
       const maxLen = 10;
