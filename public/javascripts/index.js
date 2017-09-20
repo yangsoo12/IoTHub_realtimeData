@@ -152,7 +152,7 @@ $(document).ready(function () {
   });
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   var ctx2 = document.getElementById("myChart2").getContext("2d");
-  var optionsNoAnimation = { animation: false }
+  var optionsNoAnimation2 = { animation: false }
   var myLineChart2 = new Chart(ctx2, {
     type: 'line',
     data: data2,
@@ -214,8 +214,11 @@ $(document).ready(function () {
 		  rpm2Data.shift();
 	  }
 
+ myLineChart2.update();
+
       myLineChart.update();
-	  myLineChart2.update();
+
+	 
 
 
       
