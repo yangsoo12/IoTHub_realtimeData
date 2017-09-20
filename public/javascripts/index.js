@@ -39,7 +39,7 @@ $(document).ready(function () {
         backgroundColor: "rgba(255, 204, 0, 0.4)",
         pointHoverBackgroundColor: "rgba(255, 204, 0, 1)",
         pointHoverBorderColor: "rgba(255, 204, 0, 1)",
-        data: temperatureData
+        data: rpmData
       },
       {
         fill: false,
@@ -50,7 +50,7 @@ $(document).ready(function () {
         backgroundColor: "rgba(255, 131, 131, 0.4)",
         pointHoverBackgroundColor: "rgba(255, 131, 131, 1)",
         pointHoverBorderColor: "rgba(255, 131, 131, 1)",
-        data: pm2Data
+        data: rpm2Data
       }
     ]
   }
@@ -200,7 +200,6 @@ $(document).ready(function () {
 		  pm2Data.shift();
 	  }
 	  if (obj.params.rpm) {
-		  alert(obj.params.rpm);
 		  rpmData.push(obj.params.rpm);
 	  }
 	  if (rpmData.length > maxLen)
