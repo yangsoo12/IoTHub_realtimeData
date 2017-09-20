@@ -176,7 +176,6 @@ $(document).ready(function () {
 	  document.getElementById("humi").innerHTML = obj.params.Humidity;
 	  document.getElementById("rpm").innerHTML = obj.params.rpm;
 	  document.getElementById("rpm2").innerHTML = obj.params.rpm2;
-	    alert(obj.params.rpm);
       timeData.push(obj.time);
       temperatureData.push(obj.params.Temperature);
       // only keep no more than 50 points in the line chart
@@ -195,20 +194,18 @@ $(document).ready(function () {
       }
 	  if (obj.params.pm2) {
 		  pm2Data.push(obj.params.pm2);
+		  rpmData.push(obj.params.rpm);
+		  rpm2Data.push(obj.params.rpm2);
 	  }
 	  if (pm2Data.length > maxLen)
 	  {
 		  pm2Data.shift();
 	  }
-	  if (obj.params.rpm) {
-		  rpmData.push(obj.params.rpm);
-	  }
+	    
+	    
 	  if (rpmData.length > maxLen)
 	  {
 		  rpmData.shift();
-	  }
-	  if (obj.params.rpm2) {
-		  rpm2Data.push(obj.params.rpm2);
 	  }
 	  if (rpm2Data.length > maxLen)
 	  {
