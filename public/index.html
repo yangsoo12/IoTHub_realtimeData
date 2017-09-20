@@ -205,6 +205,59 @@
     });
     </script>
 <!---------------------------------------------------------------------------------------->
+	<script>
+    var g5;
+    document.addEventListener("DOMContentLoaded", function(event) {
+        g5 = new JustGage({
+            id: "g5",
+            value: 72,
+            min: 0,
+            max: 100,
+            donut: true,
+            gaugeWidthScale: 0.3,
+            counter: true,
+            hideInnerShadow: true
+        });
+
+   //     document.getElementById('g1_refresh').addEventListener('click', function() {
+   //         g1.refresh(getRandomInt(0, 100));
+   //     });
+   setInterval(myMethod5, 1000);
+   function myMethod5( )
+	{
+		var aaa = document.getElementById("rpm").innerHTML;
+		g5.refresh(parseInt(aaa));
+	}
+    });
+    </script>
+<!---------------------------------------------------------------------------------------->
+
+<script>
+    var g6;
+    document.addEventListener("DOMContentLoaded", function(event) {
+        g6 = new JustGage({
+            id: "g6",
+            value: 72,
+            min: 0,
+            max: 100,
+            donut: true,
+            gaugeWidthScale: 0.3,
+            counter: true,
+            hideInnerShadow: true
+        });
+
+   //     document.getElementById('g1_refresh').addEventListener('click', function() {
+   //         g1.refresh(getRandomInt(0, 100));
+   //     });
+   setInterval(myMethod6, 1000);
+   function myMethod6( )
+	{
+		var aaa = document.getElementById("rpm2").innerHTML;
+		g6.refresh(parseInt(aaa));
+	}
+    });
+    </script>
+<!---------------------------------------------------------------------------------------->
 <!-- local donut -->
 
 <!--게이지 차트 테이블--> 
