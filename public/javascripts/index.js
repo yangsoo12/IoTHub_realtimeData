@@ -176,7 +176,9 @@ $(document).ready(function () {
 	  document.getElementById("humi").innerHTML = obj.params.Humidity;
 	  document.getElementById("rpm").innerHTML = obj.params.rpm;
 	  document.getElementById("rpm2").innerHTML = obj.params.rpm2;
-      timeData.push(obj.time);
+	  var time = obj.time;
+	  var subS = time.substring(11,19);
+      timeData.push(subS);
       temperatureData.push(obj.params.Temperature);
       // only keep no more than 50 points in the line chart
       const maxLen = 10;
