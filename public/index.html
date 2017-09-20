@@ -1,7 +1,7 @@
-<!doctype html>
 <html>
- <head>
-  <meta charset="UTF-8">
+
+<head>
+
     <title>Temperature &amp; Humidity live data</title>
     <script src="javascripts/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="javascripts/Chart.min.js" type="text/javascript" charset="utf-8"></script>
@@ -9,8 +9,8 @@
     <link href="stylesheets/style.css" rel="stylesheet" />
 
 <!-- ajax script reference -->
-    <meta name="viewport" content="width=device-width">
-    <script src="https://cdn.jsdelivr.net/raphael/2.1.4/raphael-min.js"></script>
+<meta name="viewport" content="width=device-width">
+	<script src="https://cdn.jsdelivr.net/raphael/2.1.4/raphael-min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/justgage/1.2.2/justgage.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.js">
     </script>
@@ -252,7 +252,8 @@
     </table>
 	
     <table border ="1" width="1200px" height="400px"><tr><td>
-	<canvas id="myChart" width="400" height="150"></canvas></td>
+	<canvas id="myChart" width="400" height="150"></canvas>
+	<canvas id="myChart2" width="400" height="150"></canvas></td>
 	<td><table id="maps"><tr><td>
     <div class="nam">DIT 실시간 미세먼지 지도</div>
     <div id = "map" style="width:500px; height: 400px;"></div>
@@ -273,8 +274,8 @@
                     var myXML = res.responseText;
                     // This is the part xml2Json comes in.
                     var JSONConvertedXML = $.xml2json(myXML);
-                    //g2_pm10 = JSONConvertedXML.body.items.item.pm10;
-                    g2_pm10 = 120;
+                    g2_pm10 = JSONConvertedXML.body.items.item.pm10;
+                    //alert(g2_pm10);
 
                     if (g2_pm10 > 80) {
                         $('#cai2').append("나쁨");
@@ -327,9 +328,8 @@
                     // This is the part xml2Json comes in.
                     var JSONConvertedXML = $.xml2json(myXML);
 					
-                    //g4_pm25 = JSONConvertedXML.body.items.item.pm25;
-                    g4_pm25 = 60;
-			if (g4_pm25 > 50) {
+                    g4_pm25 = JSONConvertedXML.body.items.item.pm25;
+                    if (g4_pm25 > 50) {
                         $('#cai4').append("나쁨");
                     } else if (g4_pm25 > 15) {
                         $('#cai4').append("보통");
@@ -463,6 +463,8 @@
     <p id="pm10"></p>
 	<p id="temp"></p>
 	<p id="humi"></p>
+	<p id="rpm"></p>
+	<p id="rpm2"></p>
 	</div>
 </body>
 
