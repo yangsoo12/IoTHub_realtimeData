@@ -39,7 +39,7 @@ $(document).ready(function () {
         backgroundColor: "rgba(255, 204, 0, 0.4)",
         pointHoverBackgroundColor: "rgba(255, 204, 0, 1)",
         pointHoverBorderColor: "rgba(255, 204, 0, 1)",
-        data: rpmData
+        data: temperatureData
       },
       {
         fill: false,
@@ -50,7 +50,7 @@ $(document).ready(function () {
         backgroundColor: "rgba(255, 131, 131, 0.4)",
         pointHoverBackgroundColor: "rgba(255, 131, 131, 1)",
         pointHoverBorderColor: "rgba(255, 131, 131, 1)",
-        data: rpm2Data
+        data: pm2Data
       }
     ]
   }
@@ -176,6 +176,7 @@ $(document).ready(function () {
 	  document.getElementById("humi").innerHTML = obj.params.Humidity;
 	  document.getElementById("rpm").innerHTML = obj.params.rpm;
 	  document.getElementById("rpm2").innerHTML = obj.params.rpm2;
+	    alert(obj.params.rpm);
       timeData.push(obj.time);
       temperatureData.push(obj.params.Temperature);
       // only keep no more than 50 points in the line chart
