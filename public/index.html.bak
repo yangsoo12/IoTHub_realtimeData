@@ -251,11 +251,11 @@
         
     </table>
 	
-    <table border ="1"><tr><td>
+    <table><tr><td>
 	<canvas id="myChart" width="400" height="150"></canvas></td>
 	<td><table id="maps"><tr><td>
     <div class="nam">DIT 실시간 미세먼지 지도</div>
-    <div id = "map" style="width:700px; height: 700px;"></div>
+    <div id = "map" style="width:1000px; height: 1000px;"></div>
     </td></tr></table></td></tr></table>
 <!--gauge1-->
 
