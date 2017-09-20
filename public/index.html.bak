@@ -41,7 +41,7 @@
     #toptext {
         margin-left: 140px;
         font-size: 23px;
-        /*font-family: 'HY¿ï¸ªµµB';*/
+        /*font-family: 'HYìš¸ë¦‰ë„B';*/
         margin-top: 19px;
     }
     .container2 {
@@ -96,7 +96,7 @@
     <script src="../justgage.js"></script>
     <img src="dit5.png" id="ditimg">
 <div id="top">
-    <!-- <img src="dit1.png" alt="¿ì¸®ÇĞ±³ " style="width:10%;height:10%;"> --> <div id="toptext"><b>½Ç½Ã°£ ¹Ì¼¼¸ÕÁö ¸ğ´ÏÅÍ¸µ ½Ã½ºÅÛ</b></div>
+    <!-- <img src="dit1.png" alt="ìš°ë¦¬í•™êµ " style="width:10%;height:10%;"> --> <div id="toptext"><b>ì‹¤ì‹œê°„ ë¯¸ì„¸ë¨¼ì§€ ëª¨ë‹ˆí„°ë§ ì‹œìŠ¤í…œ</b></div>
     </div>
 	<script>
     var g1;
@@ -207,7 +207,7 @@
 <!---------------------------------------------------------------------------------------->
 <!-- local donut -->
 
-<!--°ÔÀÌÁö Â÷Æ® Å×ÀÌºí--> 
+<!--ê²Œì´ì§€ ì°¨íŠ¸ í…Œì´ë¸”--> 
     <table id="gauges" width=0 height=0>
     <tr> 
 	<td>
@@ -232,7 +232,7 @@
         </td>      
   <!--gauge1-->           
         <td>
-        <div class="nam">½Ç¿Ü PM10(§¶/§©)</div>   
+        <div class="nam">ì‹¤ì™¸ PM10(ã/ã¥)</div>   
         <div class="container">
           <div id="gauge2" class="gauge"></div>   
              <sub id="cai2"></sub>
@@ -240,7 +240,7 @@
         </td>      
    <!--gauge2-->             
         <td> 
-        <div class="nam">½Ç¿Ü PM2.5(§¶/§©)</div>
+        <div class="nam">ì‹¤ì™¸ PM2.5(ã/ã¥)</div>
         <div class="container">
           <div id="gauge4" class="gauge"></div>
           <sub id="cai4"></sub>
@@ -254,8 +254,8 @@
     <table border ="1"><tr><td>
 	<canvas id="myChart" width="400" height="150"></canvas></td>
 	<td><table id="maps"><tr><td>
-    <div class="nam">DIT ½Ç½Ã°£ ¹Ì¼¼¸ÕÁö Áöµµ</div>
-    <div id = "map" style="width:500px; height: 400px;"></div>
+    <div class="nam">DIT ì‹¤ì‹œê°„ ë¯¸ì„¸ë¨¼ì§€ ì§€ë„</div>
+    <div id = "map" style="width:700px; height: 700px;"></div>
     </td></tr></table></td></tr></table>
 <!--gauge1-->
 
@@ -277,11 +277,11 @@
                     //alert(g2_pm10);
 
                     if (g2_pm10 > 80) {
-                        $('#cai2').append("³ª»İ");
+                        $('#cai2').append("ë‚˜ì¨");
                     } else if (g2_pm10 > 30) {
-                        $('#cai2').append("º¸Åë");
+                        $('#cai2').append("ë³´í†µ");
                     } else {
-                        $('#cai2').append("ÁÁÀ½");
+                        $('#cai2').append("ì¢‹ìŒ");
                     }
 
                     var gauge2;
@@ -329,11 +329,11 @@
 					
                     g4_pm25 = JSONConvertedXML.body.items.item.pm25;
                     if (g4_pm25 > 50) {
-                        $('#cai4').append("³ª»İ");
+                        $('#cai4').append("ë‚˜ì¨");
                     } else if (g4_pm25 > 15) {
-                        $('#cai4').append("º¸Åë");
+                        $('#cai4').append("ë³´í†µ");
                     } else {
-                        $('#cai4').append("ÁÁÀ½");
+                        $('#cai4').append("ì¢‹ìŒ");
                     }                   
 
                     var gauge4;
@@ -390,15 +390,15 @@
       if (map_J_PM10 > 80) {
         J_cl = '#FF5A5A';
         J_fcl = '#FF0000';
-        J_mcia = '³ª»İ';
+        J_mcia = 'ë‚˜ì¨';
       } else if (map_J_PM10 > 30) {
         J_cl = '#9BFF94';
         J_fcl = '#41FF3A';   
-        J_mcia = 'º¸Åë';     
+        J_mcia = 'ë³´í†µ';     
       } else {
         J_cl = '#5AAEFF';
         J_fcl = '#0054FF';  
-        J_mcia = 'ÁÁÀ½';      
+        J_mcia = 'ì¢‹ìŒ';      
       }
 
        var circle6 = L.circle([35.164934, 129.071339], 12, {
@@ -407,7 +407,7 @@
         fillColor: J_fcl,
         fillOpacity: 0.4
       }).addTo(map);     
-      circle6.bindPopup('<b>'+'TALKTALK(½Ç³»È¯°æ)'+'</b>'+'<br>'+'ÇöÀç pm10 : ' + map_J_PM10+'<br>'+'ÇöÀç pm25 : ' + map_J_PM25+'<br>'+J_mcia);
+      circle6.bindPopup('<b>'+'TALKTALK(ì‹¤ë‚´í™˜ê²½)'+'</b>'+'<br>'+'í˜„ì¬ pm10 : ' + map_J_PM10+'<br>'+'í˜„ì¬ pm25 : ' + map_J_PM25+'<br>'+J_mcia);
 
             var map_Y_PM10;
             var map_Y_PM25;
@@ -431,15 +431,15 @@
               if (map_Y_PM10 > 80) {
               Y_cl = '#FF5A5A';
               Y_fcl = '#FF0000';
-              Y_mcia = '³ª»İ'; 
+              Y_mcia = 'ë‚˜ì¨'; 
               } else if (map_Y_PM10 > 30) {
               Y_cl = '#9BFF94';
               Y_fcl = '#41FF3A';  
-              Y_mcia = 'º¸Åë';      
+              Y_mcia = 'ë³´í†µ';      
               }else {
               Y_cl = '#5AAEFF';
               Y_fcl = '#0054FF'; 
-              Y_mcia = 'ÁÁÀ½';       
+              Y_mcia = 'ì¢‹ìŒ';       
              }
 
       var circle7 = L.circle([35.165223, 129.070819], 12, {
@@ -448,7 +448,7 @@
         fillColor: Y_fcl,
         fillOpacity: 0.4
       }).addTo(map);
-      circle7.bindPopup('<b>'+'½Ç¿ÜÈ¯°æ'+'</b>'+'<br>'+'ÇöÀç pm10 : ' + map_Y_PM10+'<br>'+'ÇöÀç pm25 : ' + map_Y_PM25+'<br>'+Y_mcia);
+      circle7.bindPopup('<b>'+'ì‹¤ì™¸í™˜ê²½'+'</b>'+'<br>'+'í˜„ì¬ pm10 : ' + map_Y_PM10+'<br>'+'í˜„ì¬ pm25 : ' + map_Y_PM25+'<br>'+Y_mcia);
 
           }
       });
