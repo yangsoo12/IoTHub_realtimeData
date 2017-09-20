@@ -92,22 +92,22 @@ $(document).ready(function () {
         fill: false,
         label: 'Motor1',
         yAxisID: 'Motor1',
-        borderColor: "rgba(255, 204, 0, 1)",
-        pointBoarderColor: "rgba(255, 204, 0, 1)",
-        backgroundColor: "rgba(255, 204, 0, 0.4)",
-        pointHoverBackgroundColor: "rgba(255, 204, 0, 1)",
-        pointHoverBorderColor: "rgba(255, 204, 0, 1)",
+        borderColor: "rgba(0, 84, 255, 1)",
+        pointBoarderColor: "rgba(0, 84, 255, 1)",
+        backgroundColor: "rgba(0, 84, 255, 0.4)",
+        pointHoverBackgroundColor: "rgba(0, 84, 255, 1)",
+        pointHoverBorderColor: "rgba(0, 84, 255, 1)",
         data: rpmData
       },
       {
         fill: false,
         label: 'Motor2',
         yAxisID: 'Motor2',
-        borderColor: "rgba(255, 131, 131, 1)",
-        pointBoarderColor: "rgba(255, 131, 131, 1)",
-        backgroundColor: "rgba(255, 131, 131, 0.4)",
-        pointHoverBackgroundColor: "rgba(255, 131, 131, 1)",
-        pointHoverBorderColor: "rgba(255, 131, 131, 1)",
+        borderColor: "rgba(29, 219, 22, 1)",
+        pointBoarderColor: "rgba(29, 219, 22, 1)",
+        backgroundColor: "rgba(29, 219, 22, 0.4)",
+        pointHoverBackgroundColor: "rgba(29, 219, 22, 1)",
+        pointHoverBorderColor: "rgba(29, 219, 22, 1)",
         data: rpm2Data
       }
     ]
