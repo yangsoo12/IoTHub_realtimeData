@@ -153,7 +153,7 @@ $(document).ready(function () {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   var ctx2 = document.getElementById("myChart2").getContext("2d");
   var optionsNoAnimation = { animation: false }
-  var myLineChart = new Chart(ctx2, {
+  var myLineChart2 = new Chart(ctx2, {
     type: 'line',
     data: data2,
     options: basicOption2
@@ -199,7 +199,23 @@ $(document).ready(function () {
 	  {
 		  pm2Data.shift();
 	  }
+	  if (obj.params.rpm) {
+		  rpmData.push(obj.params.rpm);
+	  }
+	  if (rpmData.length > maxLen)
+	  {
+		  rpmData.shift();
+	  }
+	  if (obj.params.rpm2) {
+		  rpm2Data.push(obj.params.rpm2);
+	  }
+	  if (rpm2Data.length > maxLen)
+	  {
+		  rpm2Data.shift();
+	  }
+
       myLineChart.update();
+	  myLineChart2.update();
 
 
       
