@@ -200,6 +200,7 @@ $(document).ready(function () {
 		  pm2Data.shift();
 	  }
 	  if (obj.params.rpm) {
+		  alert(obj.params.rpm);
 		  rpmData.push(obj.params.rpm);
 	  }
 	  if (rpmData.length > maxLen)
