@@ -16,6 +16,8 @@ $(document).ready(function () {
   var templength = temperatureData.length;
   var pm10length = pm10Data.length;
   var pm25length = pm25Data.length;
+  var rpmData = [];
+  var rpm2Data = [];
    
    var aaaa = 50;
   //---------yanji end 1/2------------
@@ -23,12 +25,14 @@ $(document).ready(function () {
   document.getElementById("pm10").innerHTML = "30";
   document.getElementById("temp").innerHTML = "10";
   document.getElementById("humi").innerHTML = "80";
+  document.getElementById("rpm").innerHTML = "1200";
+  document.getElementById("rpm2").innerHTML = "1000";
   var data = {
     labels: timeData,
     datasets: [
       {
         fill: false,
-        label: 'Val',
+        label: 'Temp',
         yAxisID: 'Temperature',
         borderColor: "rgba(255, 204, 0, 1)",
         pointBoarderColor: "rgba(255, 204, 0, 1)",
@@ -62,7 +66,7 @@ $(document).ready(function () {
         id: 'Temperature',
         type: 'linear',
         scaleLabel: {
-          labelString: 'Val(C)',
+          labelString: 'Temp(C)',
           display: true
         },
         position: 'left',
@@ -78,6 +82,66 @@ $(document).ready(function () {
     }
   }
 
+
+  ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+  var data2 = {
+    labels: timeData,
+    datasets: [
+      {
+        fill: false,
+        label: 'Motor1',
+        yAxisID: 'Motor1',
+        borderColor: "rgba(255, 204, 0, 1)",
+        pointBoarderColor: "rgba(255, 204, 0, 1)",
+        backgroundColor: "rgba(255, 204, 0, 0.4)",
+        pointHoverBackgroundColor: "rgba(255, 204, 0, 1)",
+        pointHoverBorderColor: "rgba(255, 204, 0, 1)",
+        data: rpmData
+      },
+      {
+        fill: false,
+        label: 'Motor2',
+        yAxisID: 'Motor2',
+        borderColor: "rgba(255, 131, 131, 1)",
+        pointBoarderColor: "rgba(255, 131, 131, 1)",
+        backgroundColor: "rgba(255, 131, 131, 0.4)",
+        pointHoverBackgroundColor: "rgba(255, 131, 131, 1)",
+        pointHoverBorderColor: "rgba(255, 131, 131, 1)",
+        data: rpm2Data
+      }
+    ]
+  }
+
+  var basicOption2 = {
+    title: {
+      display: true,
+      text: 'Mortor1 & Mortor2 Real-time Data',
+      fontSize: 15
+    },
+    scales: {
+      yAxes: [{
+        id: 'Motor1',
+        type: 'linear',
+        scaleLabel: {
+          labelString: 'rpm(r/min)',
+          display: true
+        },
+        position: 'left',
+      }, {
+          id: 'Motor2',
+          type: 'linear',
+          scaleLabel: {
+            labelString: 'rpm(r/min)',
+            display: true
+          },
+          position: 'right'
+        }]
+    }
+  }
+
+  ///////////////////////////////////////////////////////////////////////////////////////////////////
+
   //Get the context of the canvas element we want to select
   var ctx = document.getElementById("myChart").getContext("2d");
   var optionsNoAnimation = { animation: false }
@@ -86,7 +150,15 @@ $(document).ready(function () {
     data: data,
     options: basicOption
   });
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  var ctx2 = document.getElementById("myChart2").getContext("2d");
+  var optionsNoAnimation = { animation: false }
+  var myLineChart = new Chart(ctx2, {
+    type: 'line',
+    data: data2,
+    options: basicOption2
+  });
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   var ws = new WebSocket('wss://' + location.host);
   ws.onopen = function () {
     console.log('Successfully connect WebSocket');
@@ -102,6 +174,8 @@ $(document).ready(function () {
   	  document.getElementById("pm10").innerHTML = obj.params.pm10;
 	  document.getElementById("temp").innerHTML = obj.params.Temperature;
 	  document.getElementById("humi").innerHTML = obj.params.Humidity;
+	  document.getElementById("rpm").innerHTML = obj.params.rpm;
+	  document.getElementById("rpm2").innerHTML = obj.params.rpm2;
       timeData.push(obj.time);
       temperatureData.push(obj.params.Temperature);
       // only keep no more than 50 points in the line chart
