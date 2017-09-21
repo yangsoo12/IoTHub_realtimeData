@@ -140,7 +140,7 @@ $(document).ready(function () {
     }
   }
 
-  ///////////////////////////////////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   //Get the context of the canvas element we want to select
   var ctx = document.getElementById("myChart").getContext("2d");
@@ -230,6 +230,7 @@ $(document).ready(function () {
 	  {
 		  rpm2Data.shift();
 	  }
+//graph tag start------------------------------------------------------------------
 if(obj.params.pm2>80){
 	document.getElementById("pm25dis").innerHTML = "아주나쁨";
 }else if(obj.params.pm2>60){
@@ -241,6 +242,50 @@ if(obj.params.pm2>80){
 }else if(obj.params.pm2>0){
 	document.getElementById("pm25dis").innerHTML = "아주좋음";
 }
+	    if(obj.params.pm10>80){
+	document.getElementById("pm10dis").innerHTML = "아주나쁨";
+}else if(obj.params.pm2>60){
+	document.getElementById("pm10dis").innerHTML = "나쁨";
+}else if(obj.params.pm2>40){
+	document.getElementById("pm10dis").innerHTML = "보통";
+}else if(obj.params.pm2>20){
+	document.getElementById("pm10dis").innerHTML = "좋음";
+}else if(obj.params.pm2>0){
+	document.getElementById("pm10dis").innerHTML = "아주좋음";
+}
+	    if(obj.params.temp>30){
+	document.getElementById("tempdis").innerHTML = "높음";
+}else if(obj.params.temp>20){
+	document.getElementById("tempdis").innerHTML = "나쁨";
+}else if(obj.params.temp>0){
+	document.getElementById("tempdis").innerHTML = "낮음";
+}
+	    if(obj.params.humi>70){
+	document.getElementById("humidis").innerHTML = "습함";
+}else if(obj.params.pm2>50){
+	document.getElementById("humidis").innerHTML = "쾌적";
+}else if(obj.params.pm2>0){
+	document.getElementById("humidis").innerHTML = "건조";
+}
+	    if(obj.params.rpm  >1300){
+	document.getElementById("motor1dis").innerHTML = "강하게";
+}else if(obj.params.rpm>1100){
+	document.getElementById("motor1dis").innerHTML = "중간";
+}else if(obj.params.rpm>900){
+	document.getElementById("motor1dis").innerHTML = "약하게";
+}else if(obj.params.rpm>=0){
+	document.getElementById("motor1dis").innerHTML = "정지";
+}
+	    	    if(obj.params.rpm2>1300){
+	document.getElementById("motor2dis").innerHTML = "";
+}else if(obj.params.rpm2>1100){
+	document.getElementById("motor2dis").innerHTML = "중간";
+}else if(obj.params.rpm2>900){
+	document.getElementById("motor2dis").innerHTML = "약하게";
+}else if(obj.params.rpm2>=0){
+	document.getElementById("motor2dis").innerHTML = "정지";
+}
+//graph tag end-------------------------------------------------------------------
  myLineChart2.update();
 
       myLineChart.update();
@@ -250,7 +295,7 @@ if(obj.params.pm2>80){
 
       
  //---------yanji start 2/2------------
-  //20170913 pm Data push    
+ //20170913 pm Data push    
       pm10Data.push(obj.params.pm10);
       pm25Data.push(obj.params.pm2);
     
