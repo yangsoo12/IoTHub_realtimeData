@@ -256,7 +256,7 @@ if(obj.params.pm2>80){
 	    if(obj.params.temp>30){
 	document.getElementById("tempdis").innerHTML = "높음";
 }else if(obj.params.temp>20){
-	document.getElementById("tempdis").innerHTML = "나쁨";
+	document.getElementById("tempdis").innerHTML = "쾌적";
 }else if(obj.params.temp>0){
 	document.getElementById("tempdis").innerHTML = "낮음";
 }
