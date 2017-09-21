@@ -253,11 +253,11 @@ if(obj.params.pm2>80){
 }else if(obj.params.pm2>0){
 	document.getElementById("pm10dis").innerHTML = "아주좋음";
 }
-	    if(obj.params.temp>30){
+	    if(obj.params.Temperature>30){
 	document.getElementById("tempdis").innerHTML = "높음";
-}else if(obj.params.temp>20){
+}else if(obj.params.Temperature>20){
 	document.getElementById("tempdis").innerHTML = "쾌적";
-}else if(obj.params.temp>0){
+}else if(obj.params.Temperature>0){
 	document.getElementById("tempdis").innerHTML = "낮음";
 }
 	    if(obj.params.humi>70){
@@ -268,22 +268,22 @@ if(obj.params.pm2>80){
 	document.getElementById("humidis").innerHTML = "건조";
 }
 	    if(obj.params.rpm  >1300){
-	document.getElementById("motor1dis").innerHTML = "강하게";
+	document.getElementById("rpm1dis").innerHTML = "강하게";
 }else if(obj.params.rpm>1100){
-	document.getElementById("motor1dis").innerHTML = "중간";
+	document.getElementById("rpm1dis").innerHTML = "중간";
 }else if(obj.params.rpm>900){
-	document.getElementById("motor1dis").innerHTML = "약하게";
+	document.getElementById("rpm1dis").innerHTML = "약하게";
 }else if(obj.params.rpm>=0){
-	document.getElementById("motor1dis").innerHTML = "정지";
+	document.getElementById("rpm1dis").innerHTML = "정지";
 }
 	    	    if(obj.params.rpm2>1300){
-	document.getElementById("motor2dis").innerHTML = "";
+	document.getElementById("rpm2dis").innerHTML = "";
 }else if(obj.params.rpm2>1100){
-	document.getElementById("motor2dis").innerHTML = "중간";
+	document.getElementById("rpm2dis").innerHTML = "중간";
 }else if(obj.params.rpm2>900){
-	document.getElementById("motor2dis").innerHTML = "약하게";
+	document.getElementById("rpm2dis").innerHTML = "약하게";
 }else if(obj.params.rpm2>=0){
-	document.getElementById("motor2dis").innerHTML = "정지";
+	document.getElementById("rpm2dis").innerHTML = "정지";
 }
 //graph tag end-------------------------------------------------------------------
  myLineChart2.update();
