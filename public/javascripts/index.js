@@ -230,7 +230,17 @@ $(document).ready(function () {
 	  {
 		  rpm2Data.shift();
 	  }
-
+if(obj.params.pm2>80){
+	document.getElementById("pm25dis").innerHTML = "아주나쁨";
+}else if(obj.params.pm2>60){
+	document.getElementById("pm25dis").innerHTML = "나쁨";
+}else if(obj.params.pm2>40){
+	document.getElementById("pm25dis").innerHTML = "보통";
+}else if(obj.params.pm2>20){
+	document.getElementById("pm25dis").innerHTML = "좋음";
+}else if(obj.params.pm2>0){
+	document.getElementById("pm25dis").innerHTML = "아주좋음";
+}
  myLineChart2.update();
 
       myLineChart.update();
