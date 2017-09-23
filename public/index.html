@@ -29,8 +29,8 @@
 <style type="text/css">
  #top{
         margin-top: 0px;
-        width:1692px;
-        height:50px;
+        width:1700px;
+        height:40px;
         color: white;
         background-color: #353535;
         /*text-align: center;*/
@@ -49,12 +49,10 @@
         margin: 0 auto;
         text-align: center;
     }
-
     .gauge2 {
         width: 150px;
         height: 150px;
     }
-
     a:link.button,
     a:active.button,
     a:visited.button,
@@ -67,7 +65,7 @@
     .container {
         width: 180px;
         margin: 0 auto;
-	/*background-color:#F2F2F2;*/
+	background-color:#F2F2F2;
     }
     .nam{
       /*  border-radius: 40px;
@@ -119,8 +117,8 @@
 <div id="top">
  
     <!-- <img src="dit1.png" alt="우리학교 " style="width:10%;height:10%;"> --> <div id="toptext">
-<img src ="http://soso525.dothome.co.kr/ditwhite.png" class="imglogo" style="width: 50px; height:35px; margin-top: 3px; margin-left: -120px;" />
-    <b style="margin-top: -5px;">Air-Talk Talk 미세먼지 모니터링 시스템</b></div>
+<img src ="http://soso525.dothome.co.kr/airtalk.jpg" class="imglogo" style="width: 25px; height:25px; margin-top: 7px;" />
+    <b style="margin-top: -5px;">실시간 미세먼지 모니터링 시스템</b></div>
     </div>
 	<script>
     var g1;
@@ -135,7 +133,6 @@
             counter: true,
             hideInnerShadow: true
         });
-
    //     document.getElementById('g1_refresh').addEventListener('click', function() {
    //         g1.refresh(getRandomInt(0, 100));
    //     });
@@ -163,7 +160,6 @@
             counter: true,
             hideInnerShadow: true
         });
-
    //     document.getElementById('g1_refresh').addEventListener('click', function() {
    //         g1.refresh(getRandomInt(0, 100));
    //     });
@@ -190,7 +186,6 @@
             counter: true,
             hideInnerShadow: true
         });
-
    //     document.getElementById('g1_refresh').addEventListener('click', function() {
    //         g1.refresh(getRandomInt(0, 100));
    //     });
@@ -217,7 +212,6 @@
             counter: true,
             hideInnerShadow: true
         });
-
    //     document.getElementById('g1_refresh').addEventListener('click', function() {
    //         g1.refresh(getRandomInt(0, 100));
    //     });
@@ -243,7 +237,6 @@
             counter: true,
             hideInnerShadow: true
         });
-
    //     document.getElementById('g1_refresh').addEventListener('click', function() {
    //         g1.refresh(getRandomInt(0, 100));
    //     });
@@ -270,7 +263,6 @@
             counter: true,
             hideInnerShadow: true
         });
-
    //     document.getElementById('g1_refresh').addEventListener('click', function() {
    //         g1.refresh(getRandomInt(0, 100));
    //     });
@@ -287,7 +279,7 @@
 
 <!--게이지 차트 테이블--> 
 	   
-   <table id="gauges" width=1692 height=0 >
+   <table id="gauges" width=1700 height=0>
 	 <tr>
               <td colspan="4">
 			   <p id="named">AIR-TalkTalk(실내대기환경)</p>
@@ -295,8 +287,8 @@
 		   <td colspan ="4">
 			   <p id ="named">Motor rpm(가동성능)</p>
 		   </td>
-		   <td colspan = "3" >
-			   <p id = "named" style="margin-left: -40px;">Data parsing(실외대기환경)</p>
+		   <td colspan = "2">
+			   <p id = "named">Data parsing(실외대기환경)</p>
 		   </td>
 	   </tr>
            <tr> 
@@ -328,8 +320,9 @@
         <div id="g4" class="gauge2"></div>
 		<p id="humidis">fsfdf</p>
     </div>
-
-           <td width="70"></td> 
+        </td>
+		   <td><p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+		   </td>
 	<td>
 		<div class="nam">Mortor1(r/mm)</div>
         <div class="container2">
@@ -344,40 +337,40 @@
 		<p id="rpm2dis">fsfdf</p>
     </div>
         </td>
-		   <td width="50"></td>	   
+		   <td><p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+		   </td>
   <!--gauge1-->           
         <td>
-        <div class="nam" >실외 PM10(㎍/㎥)</div>   
+        <div class="nam">실외 PM10(㎍/㎥)</div>   
         <div class="container">
           <div id="gauge2" class="gauge"></div>   
              <sub id="cai2"></sub>
     </div>     
         </td>      
    <!--gauge2-->             
-        <td style="padding-left: -20px;"> 
-        <div class="nam" >실외 PM2.5(㎍/㎥)</div>
+        <td> 
+        <div class="nam">실외 PM2.5(㎍/㎥)</div>
         <div class="container">
           <div id="gauge4" class="gauge"></div>
           <sub id="cai4"></sub>
         </div>     
         </td>
-        <td width="40"></td>
        </tr>
       
         
     </table>
 	
-    <table width="1700px" height="500px" ><tr><td height="250px" width="900px">
+    <table width="1700px" height="500px"><tr><td height="250px">
 	    <canvas id="myChart" width="400" height="150">
 	</canvas></td>
 	<td rowspan="2">
-        <table style=" width:700px; height: 700px;margin-left: 15px; background-color:#F7F7F7;" >
+        <table style=" width:700px; height: 700px;margin-left: 15px" >
             <tr> 
                 <td rowspan="2" style="width: 400px;">
                     <iframe width="400px" height="350px" src="https://app.powerbi.com/view?r=eyJrIjoiYjVkYzhmOTEtYzY3MS00Y2IxLThmMWUtNDlhMzMxZDI1YmQzIiwidCI6IjIyYmZmZDRiLTVlY2YtNDE5MC04YTVkLWVmN2I2NWJmMDM1ZSIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
                 </td>
                 <td rowspan="4" style="width: 400px;">
-                    <div class="nam" style="background-color: #F7F7F7;" >DIT 실시간 미세먼지 지도</div>
+                    <div class="nam" >DIT 실시간 미세먼지 지도</div>
                     <div id = "map" style="width:500px; height: 700px; "></div>
                 </td>
             </tr> <tr> </tr>
@@ -400,7 +393,6 @@
 <script>
     function xmlLoader2(){
             var g2_pm10 = 30;  
-
             var result1 = Math.floor(Math.random() * 1000);
             $.ajax({
                 url: 'http://opendata.busan.go.kr/openapi/service/AirQualityInfoService/getAirQualityInfoClassifiedByStation?ServiceKey=XvbbhgxojihU59b%2BzI27UNzRTxEsexjg3suPdRbu%2F5rSpomO7FP7SOjZVpkM7E9JwzLeXf4GY49rLLHE8kgzgQ%3D%3D&numOfRows=1&pageSize=1&pageNo=1&idx=221152&Date_hour=201410' + result1,
@@ -413,7 +405,6 @@
                     var JSONConvertedXML = $.xml2json(myXML);
                     g2_pm10 = JSONConvertedXML.body.items.item.pm10;
                     //alert(g2_pm10);
-
                     if (g2_pm10 > 80) {
                         $('#cai2').append("나쁨");
                     } else if (g2_pm10 > 30) {
@@ -421,7 +412,6 @@
                     } else {
                         $('#cai2').append("좋음");
                     }
-
                     var gauge2;
                     gauge2 = new JustGage({
                     bindto: '#gauge2',
@@ -473,7 +463,6 @@
                     } else {
                         $('#cai4').append("좋음");
                     }                   
-
                     var gauge4;
                     gauge4 = new JustGage({
                     bindto: '#gauge4',
@@ -501,7 +490,6 @@
     var map = new L.map('map', {center: new L.LatLng(35.165694, 129.072770), zoom: 17});
     var googleLayer = new L.Google('ROADMAP');
     map.addLayer(googleLayer);
-
     
     
           
@@ -521,7 +509,6 @@
                     //map_J_PM25 = JSONConvertedXML.body.items.item.pm25; 
 					map_J_PM10 = 20;
 					map_J_PM25 = 20; 
-
       var J_cl = '#FF5A5A';
       var J_fcl = '#FF5A5A';
       var J_mcia = '#FF5A5A';
@@ -538,7 +525,6 @@
         J_fcl = '#0054FF';  
         J_mcia = '좋음';      
       }
-
        var circle6 = L.circle([35.164934, 129.071339], 12, {
         color: J_cl,
         Opacity: 0.1,
@@ -546,7 +532,6 @@
         fillOpacity: 0.4
       }).addTo(map);     
       circle6.bindPopup('<b>'+'TALKTALK(실내환경)'+'</b>'+'<br>'+'현재 pm10 : ' + map_J_PM10+'<br>'+'현재 pm25 : ' + map_J_PM25+'<br>'+J_mcia);
-
             var map_Y_PM10;
             var map_Y_PM25;
             var result6 = Math.floor(Math.random() * 1000);
@@ -579,7 +564,6 @@
               Y_fcl = '#0054FF'; 
               Y_mcia = '좋음';       
              }
-
       var circle7 = L.circle([35.165223, 129.070819], 12, {
         color: Y_cl,
         Opacity: 0.1,
@@ -587,10 +571,8 @@
         fillOpacity: 0.4
       }).addTo(map);
       circle7.bindPopup('<b>'+'실외환경'+'</b>'+'<br>'+'현재 pm10 : ' + map_Y_PM10+'<br>'+'현재 pm25 : ' + map_Y_PM25+'<br>'+Y_mcia);
-
           }
       });
-
           }
       });
   </script>        
