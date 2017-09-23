@@ -101,7 +101,9 @@
         font-family: 'HY울릉도B';
         margin-top: 19px;
 	}
-
+    #imglogo {
+        margin-top: 10px;
+    }
     </style>
 <!-- ajax style -->
 </head>
@@ -111,9 +113,14 @@
 
     <script src="../raphael-2.1.4.min.js"></script>
     <script src="../justgage.js"></script>
-    <img src="dit5.png" id="ditimg">
+   <!-- <img src="dit5.png" id="ditimg">-->
+  
+ 
 <div id="top">
-    <!-- <img src="dit1.png" alt="우리학교 " style="width:10%;height:10%;"> --> <div id="toptext"><b>실시간 미세먼지 모니터링 시스템</b></div>
+ 
+    <!-- <img src="dit1.png" alt="우리학교 " style="width:10%;height:10%;"> --> <div id="toptext">
+<img src ="http://soso525.dothome.co.kr/airtalk.jpg" class="imglogo" style="width: 25px; height:25px; margin-top: 7px;" />
+    <b style="margin-top: -5px;">실시간 미세먼지 모니터링 시스템</b></div>
     </div>
 	<script>
     var g1;
@@ -280,7 +287,7 @@
 
 <!--게이지 차트 테이블--> 
 	   
-   <table id="gauges" width=0 height=0 border="1">
+   <table id="gauges" width=0 height=0>
 	 <tr>
               <td colspan="4">
 			   <p id="named">AIR-TalkTalk(실내대기환경)</p>
@@ -361,18 +368,18 @@
         
     </table>
 	
-    <table border ="1" width="1700px" height="500px"><tr><td height="250px">
+    <table width="1700px" height="500px"><tr><td height="250px">
 	    <canvas id="myChart" width="400" height="150">
 	</canvas></td>
 	<td rowspan="2">
-        <table style=" width:800px; height: 700px; border:1px solid black" >
+        <table style=" width:800px; height: 700px;" >
             <tr> 
                 <td rowspan="2" style="width: 400px;">
                     <iframe width="400px" height="350px" src="https://app.powerbi.com/view?r=eyJrIjoiYjVkYzhmOTEtYzY3MS00Y2IxLThmMWUtNDlhMzMxZDI1YmQzIiwidCI6IjIyYmZmZDRiLTVlY2YtNDE5MC04YTVkLWVmN2I2NWJmMDM1ZSIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
                 </td>
-                <td rowspan="3" style="width: 400px;">
-                    <div class="nam" style="margin-top:-120px;" >DIT 실시간 미세먼지 지도</div>
-                    <div id = "map" style="width:400px; height: 500px; "></div>
+                <td rowspan="4" style="width: 400px;">
+                    <div class="nam" >DIT 실시간 미세먼지 지도</div>
+                    <div id = "map" style="width:400px; height: 700px; "></div>
                 </td>
             </tr> <tr> </tr>
             <tr> 
@@ -381,9 +388,9 @@
                 </td>
             </tr>
             <tr> 
-                <td style="width: 400px;">
-                     ----------------------------로고자리
-                </td>
+             <!--   <td style="width: 400px;">
+                   <img src ="http://soso525.dothome.co.kr/dit.png" style="width:400px; height:100px;" />
+                </td>-->
             </tr>
         </table>
     
