@@ -8,7 +8,9 @@ $(document).ready(function () {
   
   //20170913
   var pm10Data = [],
-      pm25Data = [];
+      pm25Data = [],
+      busp2Data = [],
+      busp1Data = [];
   var result;
  // android 20170912 23:29
   var humilength = humidityData.length;
@@ -336,21 +338,24 @@ if(obj.params.Temperature>30){
 //            insertDatas(pm25Data[pm25length],humidityData[humilength],temperatureData[templength],humidityData[humilength]);
 //         }
       //20170913
-    
      if((pm25length<pm25Data.length || pm25length == pm25Data.length)&&(pm10length<pm10Data.length || pm10length == pm10Data.length)&&(templength<temperatureData.length || templength == temperatureData.length)&&(humilength<humidityData.length || humilength == humidityData.length)){
           pm25length = pm25Data.length;
           pm10length = pm10Data.length;
           humilength = humidityData.length;
           templength = temperatureData.length;
           
-          insertDatas(pm25Data[pm25length-1],pm10Data[pm10length-1],temperatureData[templength-1],humidityData[humilength-1]);
+   	 busp1Data.push = document.getElementById("busanp10").innerHTML;
+   	 busp2Data.push = document.getElementById("busanp2").innerHTML;
+          insertDatas(pm25Data[pm25length-1],pm10Data[pm10length-1],busp2Data[busp2Data.length-1],busp1Data[busp1Data.length-1]);
                           
           }
      
       
       //android 20170912 23:29
-      function insertDatas(p2,p1,t,h){
-         var p2State;
+      function insertDatas(p2,p1,busp2,busp1){
+         var p2State, busState;
+         var a = 0;
+         a = parseInt(busp2);
          if(p2<16){
            p2State = "좋음";
          }else if(p2<51){
@@ -360,9 +365,19 @@ if(obj.params.Temperature>30){
          }else{
            p2State = "매우나쁨";
          }
-         Ao.showResult(p2,p1,t,h,p2State);
+         if(a<16){
+           busState = "좋음";
+         }else if(a<51){
+           busState = "보통";
+         }else if(a<101){
+           busState = "나쁨";
+         }else{
+           busState = "매우나쁨";
+         }
+         A2.showResult2(p2,p1,p2State,busp2,busp1,busState);
       }
       
+     
      
 //---------yanji end 2/2------------
       
