@@ -416,6 +416,7 @@
                     // This is the part xml2Json comes in.
                     var JSONConvertedXML = $.xml2json(myXML);
                     g2_pm10 = JSONConvertedXML.body.items.item.pm10;
+                    document.getElementById("busanp10").innerHTML = g2_pm10;
                     //alert(g2_pm10);
                     if (g2_pm10 > 80) {
                         $('#cai2').append("나쁨");
@@ -464,7 +465,9 @@
                     // This is the part xml2Json comes in.
                     var JSONConvertedXML = $.xml2json(myXML);
 					
-                    g4_pm25 = JSONConvertedXML.body.items.item.pm25;
+                    g4_pm25 = JSONConvertedXML.body.items.item.pm25;               
+                    document.getElementById("busanp2").innerHTML = g4_pm25;
+
                     if (g4_pm25 > 50) {
                         $('#cai4').append("나쁨");
                     } else if (g4_pm25 > 15) {
@@ -593,6 +596,8 @@
 	<p id="humi"></p>
 	<p id="rpm"></p>
 	<p id="rpm2"></p>
+    <p id="busanp2"></p>
+    <p id="busanp10"></p>
 	</div>
 </body>
 </html>
