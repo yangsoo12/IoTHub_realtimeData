@@ -344,9 +344,9 @@ if(obj.params.Temperature>30){
           humilength = humidityData.length;
           templength = temperatureData.length;
           
-   	 busp1Data.push = document.getElementById("busanp10").innerHTML;
-   	 busp2Data.push = document.getElementById("busanp2").innerHTML;
-          insertDatas(pm25Data[pm25length-1],pm10Data[pm10length-1],busp2Data[busp2Data.length-1],busp1Data[busp1Data.length-1]);
+   	 var busp1Da = document.getElementById("busanp10").innerHTML;
+   	 var busp2Da = document.getElementById("busanp2").innerHTML;
+          insertDatas(pm25Data[pm25length-1],pm10Data[pm10length-1],busp2Da,busp1Da);
                           
           }
      
