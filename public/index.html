@@ -289,6 +289,63 @@
     });
     </script>
 <!---------------------------------------------------------------------------------------->
+
+<script>
+    var g7;
+	var filterS = 10;
+	
+	
+    document.addEventListener("DOMContentLoaded", function(event) {
+        g7 = new JustGage({
+            id: "g7",
+            value: 72,
+            min: 0,
+            max: 100,
+            donut: true,
+            gaugeWidthScale: 0.3,
+            counter: true,
+            hideInnerShadow: true
+        });
+   //     document.getElementById('g1_refresh').addEventListener('click', function() {
+   //         g1.refresh(getRandomInt(0, 100));
+   //     });
+   setInterval(myMethod7, 2000);
+   function myMethod7( )
+	{
+		
+
+		var check = 0;
+		var bbb = document.getElementById("rpm").innerHTML;
+		check = parseInt(bbb);
+		if(check > 100)
+		{
+			bbb = document.getElementById("rpm2").innerHTML;
+			check = parseInt(bbb)
+			if(check > 100)
+			{
+				filterS = filterS + 2;
+			}
+			else 
+			{
+				filterS = filterS + 1;
+			}
+
+		}
+		if(filterS<70)
+		{
+			document.getElementById("filterdis").innerHTML = "상태좋음";
+		}
+		else
+		{
+			document.getElementById("filterdis").innerHTML = "교체요망";
+		}
+		
+
+		g7.refresh(filterS);
+	}
+    });
+    </script>
+<!---------------------------------------------------------------------------------------->
 <!-- local donut -->
 
 <!--게이지 차트 테이블--> 
@@ -368,6 +425,15 @@
         </div>     
         </td>
         <td width="40"></td>
+
+		<td>
+		<div class="nam">필터 교체 주기(%)</div>
+        <div class="container2">
+        <div id="g7" class="gauge2"></div>
+		<p id="filterdis">fsfdf</p>
+    </div>
+        </td>
+
        </tr>
       
         
