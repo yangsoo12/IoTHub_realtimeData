@@ -27,8 +27,8 @@ $(document).ready(function () {
   document.getElementById("pm10").innerHTML = "30";
   document.getElementById("temp").innerHTML = "10";
   document.getElementById("humi").innerHTML = "80";
-  document.getElementById("rpm").innerHTML = "1200";
-  document.getElementById("rpm2").innerHTML = "1000";
+  document.getElementById("rpm").innerHTML = "0";
+  document.getElementById("rpm2").innerHTML = "0";
   var data = {
     labels: timeData,
     datasets: [
