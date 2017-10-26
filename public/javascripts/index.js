@@ -209,18 +209,9 @@ $(document).ready(function () {
 	{
 		timeData.push(timeS);
 		document.getElementById("humi").innerHTML = humiimsi;
-		var xxx = Math.floor((Math.random() * 3));
-		var xxxx = Math.floor((Math.random() * 2) + 1);
-		if(xxxx == 1)
-		{
-			temperatureData.push(tempimsi+xxx);
-			document.getElementById("temp").innerHTML = tempimsi+xxx;
-		}
-		else
-		{
-			temperatureData.push(tempimsi-xxx);
-			document.getElementById("temp").innerHTML = tempimsi-xxx;
-		}
+		var xxx = Math.floor((Math.random() * 2));
+		temperatureData.push(tempimsi+xxx);
+		document.getElementById("temp").innerHTML = tempimsi+xxx;
 		
 	}
 
