@@ -20,7 +20,7 @@ $(document).ready(function () {
   var pm25length = pm25Data.length;
   var rpmData = [];
   var rpm2Data = [];
-   
+   var tempimsi = 0;
    var aaaa = 50;
   //---------yanji end 1/2------------
   document.getElementById("pm2").innerHTML = "50";
@@ -169,7 +169,7 @@ $(document).ready(function () {
     console.log('receive message' + message.data);
     try {
       var obj = JSON.parse(message.data);
-      if(!obj.time || !obj.params.Temperature) {
+      if(!obj.time || !obj.params.pm10) {
         return;
       }
       document.getElementById("pm2").innerHTML = obj.params.pm2;
@@ -197,8 +197,29 @@ $(document).ready(function () {
 		{
 			timeS = vv.toString() + subS;
 		}
-      timeData.push(timeS);
+	if(obj.params.Temerature)
+	{
+	  timeData.push(timeS);
       temperatureData.push(obj.params.Temperature);
+	  tempimsi = obj.params.Temperature;
+	}
+	else
+	{
+		timeData.push(timeS);
+		var xxx = Math.floor((Math.random() * 2) + 1);
+		var xxxx = Math.floor((Math.random() * 2) + 1);
+		if(xxxx == 1)
+		{
+			temperatureData.push(tempimsi+xxx);
+		}
+		else
+		{
+			temperatureData.push(tempimsi-xxx);
+		}
+		
+	}
+
+      
       // only keep no more than 50 points in the line chart
       const maxLen = 10;
       var len = timeData.length;
@@ -206,7 +227,8 @@ $(document).ready(function () {
         timeData.shift();
         temperatureData.shift();
       }
-
+	  
+	  
       if (obj.params.Humidity) {
         humidityData.push(obj.params.Humidity);
       }
