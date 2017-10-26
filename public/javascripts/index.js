@@ -197,7 +197,7 @@ $(document).ready(function () {
 		{
 			timeS = vv.toString() + subS;
 		}
-	if(obj.params.Temerature)
+	if(obj.params.Temperature)
 	{
 	  timeData.push(timeS);
       temperatureData.push(obj.params.Temperature);
