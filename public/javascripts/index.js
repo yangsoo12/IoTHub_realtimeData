@@ -211,10 +211,12 @@ $(document).ready(function () {
 		if(xxxx == 1)
 		{
 			temperatureData.push(tempimsi+xxx);
+			document.getElementById("temp").innerHTML = tempimsi+xxx;
 		}
 		else
 		{
 			temperatureData.push(tempimsi-xxx);
+			document.getElementById("temp").innerHTML = tempimsi-xxx;
 		}
 		
 	}
