@@ -35,7 +35,7 @@ $(document).ready(function () {
       {
         fill: false,
         label: 'Temp',
-        yAxisID: 'Temperature',
+        yAxisID: 'Temp',
         borderColor: "rgba(255, 204, 0, 1)",
         pointBoarderColor: "rgba(255, 204, 0, 1)",
         backgroundColor: "rgba(255, 204, 0, 0.4)",
@@ -65,7 +65,7 @@ $(document).ready(function () {
     },
     scales: {
       yAxes: [{
-        id: 'Temperature',
+        id: 'Temp',
         type: 'linear',
         scaleLabel: {
           labelString: 'Temp(C)',
