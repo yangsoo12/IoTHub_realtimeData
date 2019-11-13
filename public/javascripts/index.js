@@ -171,7 +171,7 @@ $(document).ready(function () {
 	  document.getElementById("temp").innerHTML = obj.params.Temperature;
 	  document.getElementById("humi").innerHTML = obj.params.Humidity;
 	  document.getElementById("rpm").innerHTML = obj.params.rpm;
-	  document.getElementById("rpm2").innerHTML = 0;
+	  //document.getElementById("rpm2").innerHTML = 0;
 	  var time = obj.time;
 	  var subS = time.substring(13,19);
 	  var hourS = time.substring(11,13);
@@ -227,7 +227,7 @@ $(document).ready(function () {
 	  if (obj.params.pm2) {
 		  pm2Data.push(obj.params.pm2);
 		  rpmData.push(obj.params.rpm);
-		  rpm2Data.push(obj.params.Humidity);
+		  //rpm2Data.push(obj.params.Humidity);
 	  }
 	  if (pm2Data.length > maxLen)
 	  {
@@ -239,11 +239,12 @@ $(document).ready(function () {
 	  {
 		  rpmData.shift();
 	  }
+	    /*
 	  if (rpm2Data.length > maxLen)
 	  {
 		  rpm2Data.shift();
 	  }
-
+           */
 // yangji, update data Start-------------------------------------------------------
 
 if(obj.params.pm2>100){
