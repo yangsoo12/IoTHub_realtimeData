@@ -1,27 +1,20 @@
 $(document).ready(function () {
   var timeData = [],
-    temperatureData = [],
-    humidityData = [],
-  pm2Data = [],
-  pm10Data = [];
- //---------yanji start 1/2------------
-  
-  //20170913
+      temperatureData = [],
+      humidityData = [],
+      pm2Data = [],
+      pm10Data = [],
+      rpmData=[],
+      rpm2Data=[];
   var pm10Data = [],
-      pm25Data = [],
-      busp2Data = [],
-      busp1Data = [];
+      pm25Data = [];
   var result;
- // android 20170912 23:29
   var humilength = humidityData.length;
-  // 20170913
   var templength = temperatureData.length;
   var pm10length = pm10Data.length;
   var pm25length = pm25Data.length;
-  var rpmData = [];
-  var rpm2Data = [];
-   var tempimsi = 0;
-   var humiimsi = 0;
+  var rpmlength = rpmData.length;
+  var rpm2length = humidityData.length;
    var aaaa = 50;
   //---------yanji end 1/2------------
   document.getElementById("pm2").innerHTML = "50";
@@ -111,7 +104,7 @@ $(document).ready(function () {
         backgroundColor: "rgba(29, 219, 22, 0.4)",
         pointHoverBackgroundColor: "rgba(29, 219, 22, 1)",
         pointHoverBorderColor: "rgba(29, 219, 22, 1)",
-        data: rpm2Data
+        data: humidityData
       }
     ]
   }
@@ -178,7 +171,7 @@ $(document).ready(function () {
 	  document.getElementById("temp").innerHTML = obj.params.Temperature;
 	  document.getElementById("humi").innerHTML = obj.params.Humidity;
 	  document.getElementById("rpm").innerHTML = obj.params.rpm;
-	  document.getElementById("rpm2").innerHTML = obj.params.rpm2;
+	  document.getElementById("rpm2").innerHTML = obj.params.Humidity;
 	  var time = obj.time;
 	  var subS = time.substring(13,19);
 	  var hourS = time.substring(11,13);
@@ -234,7 +227,7 @@ $(document).ready(function () {
 	  if (obj.params.pm2) {
 		  pm2Data.push(obj.params.pm2);
 		  rpmData.push(obj.params.rpm);
-		  rpm2Data.push(obj.params.rpm2);
+		  rpm2Data.push(obj.params.Humidity);
 	  }
 	  if (pm2Data.length > maxLen)
 	  {
