@@ -14,7 +14,7 @@ $(document).ready(function () {
   var pm10length = pm10Data.length;
   var pm25length = pm25Data.length;
   var rpmlength = rpmData.length;
-  var rpm2length = humidityData.length;
+ 
    var aaaa = 50;
   //---------yanji end 1/2------------
   document.getElementById("pm2").innerHTML = "50";
@@ -171,7 +171,7 @@ $(document).ready(function () {
 	  document.getElementById("temp").innerHTML = obj.params.Temperature;
 	  document.getElementById("humi").innerHTML = obj.params.Humidity;
 	  document.getElementById("rpm").innerHTML = obj.params.rpm;
-	  document.getElementById("rpm2").innerHTML = obj.params.Humidity;
+	  document.getElementById("rpm2").innerHTML = 0;
 	  var time = obj.time;
 	  var subS = time.substring(13,19);
 	  var hourS = time.substring(11,13);
