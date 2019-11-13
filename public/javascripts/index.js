@@ -310,11 +310,14 @@ if(obj.params.Temperature>30){
 	document.getElementById("rpm1dis").innerHTML = "강하게";
 }else if(obj.params.rpm>1100){
 	document.getElementById("rpm1dis").innerHTML = "중간";
-}else if(obj.params.rpm>900){
+	document.getElementById("rpm2dis").innerHTML = "정지";
+}else if(obj.params.rpm>750){
 	document.getElementById("rpm1dis").innerHTML = "약하게";
+	document.getElementById("rpm2dis").innerHTML = "정지";
 }else if(obj.params.rpm>=0){
 	document.getElementById("rpm1dis").innerHTML = "정지";
-}
+	document.getElementById("rpm2dis").innerHTML = "정지";
+}/*
 	    	    if(obj.params.rpm2>1300){
 	document.getElementById("rpm2dis").innerHTML = "";
 }else if(obj.params.rpm2>1100){
@@ -323,7 +326,7 @@ if(obj.params.Temperature>30){
 	document.getElementById("rpm2dis").innerHTML = "약하게";
 }else if(obj.params.rpm2>=0){
 	document.getElementById("rpm2dis").innerHTML = "정지";
-}
+}*/
 //graph tag end-------------------------------------------------------------------
  myLineChart2.update();
 
