@@ -104,7 +104,7 @@ $(document).ready(function () {
         backgroundColor: "rgba(29, 219, 22, 0.4)",
         pointHoverBackgroundColor: "rgba(29, 219, 22, 1)",
         pointHoverBorderColor: "rgba(29, 219, 22, 1)",
-        data: humidityData
+        data: rpm2Data
       }
     ]
   }
