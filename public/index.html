@@ -347,99 +347,72 @@
 		g7.refresh(filterS);
 	}
     });
+   </script>
    <script>
-    function xmlLoader2(){
-            var g2_pm10 = 30;  
-            var result1 = Math.floor(Math.random() * 1000);
-            $.ajax({
-                url: 'http://opendata.busan.go.kr/openapi/service/AirQualityInfoService/getAirQualityInfoClassifiedByStation?ServiceKey=XvbbhgxojihU59b%2BzI27UNzRTxEsexjg3suPdRbu%2F5rSpomO7FP7SOjZVpkM7E9JwzLeXf4GY49rLLHE8kgzgQ%3D%3D&numOfRows=1&pageSize=1&pageNo=1&idx=221152&Date_hour=201410' + result1,
-                dataType: "xml",
-                type: 'GET',
-                cache: false,
-                success: function(res) {
-                    var myXML = res.responseText;
-                    // This is the part xml2Json comes in.
-                    var JSONConvertedXML = $.xml2json(myXML);
-                    g2_pm10 = JSONConvertedXML.body.items.item.pm10;
-                    document.getElementById("busanp10").innerHTML = 33;
-                    //alert(g2_pm10);
-                    if (g2_pm10 > 80) {
+    var gauge2;
+    document.addEventListener("DOMContentLoaded", function(event) {
+        gauage2 = new JustGage({
+            id: "gauge2",
+            value: 72,
+            min: 0,
+            max: 100,
+            donut: true,
+            gaugeWidthScale: 0.3,
+            counter: true,
+            hideInnerShadow: true
+        });
+   //     document.getElementById('g1_refresh').addEventListener('click', function() {
+   //         g1.refresh(getRandomInt(0, 100));
+   //     });
+   setInterval(myMethod9, 1000);
+   function myMethod9( )
+	{
+		var aaa = 10;
+		gauage2.refresh(parseInt(aaa));
+		                if (parseInt(aaa) > 80) {
                         $('#cai2').append("나쁨");
-                    } else if (g2_pm10 > 30) {
+                    } else if (parseInt(aaa) 30) {
                         $('#cai2').append("보통");
                     } else {
                         $('#cai2').append("좋음");
                     }
-                    var gauge2;
-                    gauge2 = new JustGage({
-                    bindto: '#gauge2',
-                    id: "gauge2",
-                    value: g2_pm10,
-                    min: 0,
-                    max: 100,
-                    donut: true,
-                    gaugeWidthScale: 0.6,
-                    counter: true,
-                    hideInnerShadow: true,
-                    customSectors: [{"lo":0,"hi":30,"color":"#5AAEFF"},
-                                {"lo":31,"hi":80,"color":"#9BFF94"},
-                                {"lo":81,"hi":100,"color":"#FF5A5A"}],
-               	    levelColorsGradient: false                 
-                    });
-                }
-            });
-    }
-    xmlLoader2();
+    
+	}
+    });
     </script>
-
 	<script>
-	function xmlLoader(){
-            var g4_pm25 = 60;
-            var result2 = Math.floor(Math.random() * 1000);
-			
-			
-            $.ajax({
-                url: 'http://opendata.busan.go.kr/openapi/service/AirQualityInfoService/getAirQualityInfoClassifiedByStation?ServiceKey=XvbbhgxojihU59b%2BzI27UNzRTxEsexjg3suPdRbu%2F5rSpomO7FP7SOjZVpkM7E9JwzLeXf4GY49rLLHE8kgzgQ%3D%3D&numOfRows=1&pageSize=1&pageNo=1&idx=221152&Date_hour=201410' + result2,
-                dataType: "xml",
-                type: 'GET',
-                cache: false,
-                success: function(res) {
-                    var myXML = res.responseText;
-                    // This is the part xml2Json comes in.
-                    var JSONConvertedXML = $.xml2json(myXML);
-					
-                    g4_pm25 = JSONConvertedXML.body.items.item.pm25;               
-                    document.getElementById("busanp2").innerHTML = 10;
-
-                    if (g4_pm25 > 50) {
+    var gauge4;
+    document.addEventListener("DOMContentLoaded", function(event) {
+        gauage4 = new JustGage({
+            id: "gauge4",
+            value: 72,
+            min: 0,
+            max: 100,
+            donut: true,
+            gaugeWidthScale: 0.3,
+            counter: true,
+            hideInnerShadow: true
+        });
+   //     document.getElementById('g1_refresh').addEventListener('click', function() {
+   //         g1.refresh(getRandomInt(0, 100));
+   //     });
+   setInterval(myMethod10, 1000);
+   function myMethod10( )
+	{
+		var aaa = 24;
+		gauage4.refresh(parseInt(aaa));
+		                if (parseInt(aaa) > 80) {
                         $('#cai4').append("나쁨");
-                    } else if (g4_pm25 > 15) {
+                    } else if (parseInt(aaa) 30) {
                         $('#cai4').append("보통");
                     } else {
                         $('#cai4').append("좋음");
-                    }                   
-                    var gauge4;
-                    gauge4 = new JustGage({
-                    bindto: '#gauge4',
-                    id: "gauge4",
-                    value: g4_pm25,
-                    min: 0,
-                    max: 100,
-                    donut: true,
-                    gaugeWidthScale: 0.6,
-                    counter: true,
-                    hideInnerShadow: true,
-                    customSectors: [{"lo":0,"hi":15,"color":"#5AAEFF"},
-                                    {"lo":16,"hi":50,"color":"#9BFF94"},
-                                    {"lo":51,"hi":100,"color":"#FF5A5A"}],
-                    levelColorsGradient: false
-                    });
-                }
-            });
-    }
-    xmlLoader();
+                    }
+    
+	}
+    });
     </script>
-	</script>
+    
 <!---------------------------------------------------------------------------------------->
 <!-- local donut -->
 
