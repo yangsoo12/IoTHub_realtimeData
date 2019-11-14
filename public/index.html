@@ -349,10 +349,10 @@
     });
    </script>
    <script>
-    var gauge2;
+    var g8;
     document.addEventListener("DOMContentLoaded", function(event) {
-        gauge2 = new JustGage({
-            id: "gauge2",
+        g8 = new JustGage({
+            id: "g8",
             value: 72,
             min: 0,
             max: 100,
@@ -368,7 +368,7 @@
    function myMethod9( )
 	{
 		var aaa = document.getElementById("temp").innerHTML;
-		gauge2.refresh(parseInt(aaa));
+		g8.refresh(parseInt(aaa));
 		             
                     }
     
@@ -376,10 +376,10 @@
     });
     </script>
 	<script>
-    var gauge4;
+    var g9;
     document.addEventListener("DOMContentLoaded", function(event) {
-        gauge4 = new JustGage({
-            id: "gauge4",
+        g9 = new JustGage({
+            id: "g9",
             value: 72,
             min: 0,
             max: 100,
@@ -395,9 +395,7 @@
    function myMethod10( )
 	{
 		var aaa = document.getElementById("temp").innerHTML;
-		gauge4.refresh(parseInt(aaa));
-		           
-    
+		g9.refresh(parseInt(aaa));
 	}
     });
     </script>
@@ -472,16 +470,16 @@
         <td>
         <div class="nam" >실외 PM10(㎍/㎥)</div>   
         <div class="container2" style="margin-left: : -40px;">
-          <div id="gauge2" class="gauge2"></div>   
-             <p id="cai2"></p>
+          <div id="g8" class="gauge2"></div>   
+             <p>보통</p>
     </div>     
         </td>      
    <!--gauge2-->             
         <td style="padding-left: -20px;"> 
         <div class="nam" >실외 PM2.5(㎍/㎥)</div>
         <div class="container2">
-          <div id="gauge4" class="gauge2"></div>
-          <p id="cai4"></p>
+          <div id="g9" class="gauge2"></div>
+          <p> 보통 </p>
         </div>     
         </td>
         <td width="40"></td>
