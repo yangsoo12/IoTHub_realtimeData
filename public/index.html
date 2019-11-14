@@ -351,7 +351,7 @@
    <script>
     var gauge2;
     document.addEventListener("DOMContentLoaded", function(event) {
-        gauage2 = new JustGage({
+        gauge2 = new JustGage({
             id: "gauge2",
             value: 72,
             min: 0,
@@ -368,7 +368,7 @@
    function myMethod9( )
 	{
 		var aaa = document.getElementById("temp").innerHTML;
-		g3.refresh(parseInt(aaa));
+		gauge2.refresh(parseInt(aaa));
 		                if (parseInt(aaa) > 80) {
                         $('#cai2').append("나쁨");
                     } else if (parseInt(aaa) 30) {
@@ -383,7 +383,7 @@
 	<script>
     var gauge4;
     document.addEventListener("DOMContentLoaded", function(event) {
-        gauage4 = new JustGage({
+        gauge4 = new JustGage({
             id: "gauge4",
             value: 72,
             min: 0,
@@ -400,7 +400,7 @@
    function myMethod10( )
 	{
 		var aaa = document.getElementById("temp").innerHTML;
-		g3.refresh(parseInt(aaa));
+		gauge4.refresh(parseInt(aaa));
 		                if (parseInt(aaa) > 80) {
                         $('#cai4').append("나쁨");
                     } else if (parseInt(aaa) 30) {
@@ -484,7 +484,7 @@
         <div class="nam" >실외 PM10(㎍/㎥)</div>   
         <div class="container2" style="margin-left: : -40px;">
           <div id="gauge2" class="gauge2"></div>   
-             <sub id="cai2"></sub>
+             <p id="cai2"></p>
     </div>     
         </td>      
    <!--gauge2-->             
@@ -492,7 +492,7 @@
         <div class="nam" >실외 PM2.5(㎍/㎥)</div>
         <div class="container2">
           <div id="gauge4" class="gauge2"></div>
-          <sub id="cai4"></sub>
+          <p id="cai4"></p>
         </div>     
         </td>
         <td width="40"></td>
