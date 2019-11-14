@@ -175,6 +175,8 @@ $(document).ready(function () {
 	  document.getElementById("temp").innerHTML = obj.params.Temperature;
 	  document.getElementById("humi").innerHTML = obj.params.Humidity;
 	  document.getElementById("rpm").innerHTML = obj.params.rpm;
+	  document.getElementById("busanp2").innerHTML ="13";
+	  document.getElementById("busanp10").innerHTML ="24";
 	  //document.getElementById("rpm2").innerHTML = 0;
 	  var time = obj.time;
 	  var subS = time.substring(13,19);
