@@ -25,6 +25,8 @@ $(document).ready(function () {
   document.getElementById("humi").innerHTML = "80";
   document.getElementById("rpm").innerHTML = "0";
   document.getElementById("rpm2").innerHTML = "0";
+	document.getElementById("busanp2").innerHTML ="13";
+	document.getElementById("busanp10").innerHTML ="24";
   var data = {
     labels: timeData,
     datasets: [
