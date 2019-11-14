@@ -367,8 +367,8 @@
    setInterval(myMethod9, 1000);
    function myMethod9( )
 	{
-		var aaa = 10;
-		gauage2.refresh(parseInt(aaa));
+		var aaa = document.getElementById("temp").innerHTML;
+		g3.refresh(parseInt(aaa));
 		                if (parseInt(aaa) > 80) {
                         $('#cai2').append("나쁨");
                     } else if (parseInt(aaa) 30) {
@@ -399,8 +399,8 @@
    setInterval(myMethod10, 1000);
    function myMethod10( )
 	{
-		var aaa = 24;
-		gauage4.refresh(parseInt(aaa));
+		var aaa = document.getElementById("temp").innerHTML;
+		g3.refresh(parseInt(aaa));
 		                if (parseInt(aaa) > 80) {
                         $('#cai4').append("나쁨");
                     } else if (parseInt(aaa) 30) {
