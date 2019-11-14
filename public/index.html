@@ -133,191 +133,7 @@
     <!-- <img src="dit1.png" alt="우리학교 " style="width:10%;height:10%;"> --> <div id="toptext">
     <b style="margin-top: -5px;">Air-Talk Talk 미세먼지 모니터링 시스템</b></div>
     </div>
-	<script>
-    function xmlLoader2(){
-            var g2_pm10 = 30;  
-            var result1 = Math.floor(Math.random() * 1000);
-            $.ajax({
-                url: 'http://opendata.busan.go.kr/openapi/service/AirQualityInfoService/getAirQualityInfoClassifiedByStation?ServiceKey=XvbbhgxojihU59b%2BzI27UNzRTxEsexjg3suPdRbu%2F5rSpomO7FP7SOjZVpkM7E9JwzLeXf4GY49rLLHE8kgzgQ%3D%3D&numOfRows=1&pageSize=1&pageNo=1&idx=221152&Date_hour=201410' + result1,
-                dataType: "xml",
-                type: 'GET',
-                cache: false,
-                success: function(res) {
-                    var myXML = res.responseText;
-                    // This is the part xml2Json comes in.
-                    var JSONConvertedXML = $.xml2json(myXML);
-                    g2_pm10 = JSONConvertedXML.body.items.item.pm10;
-                    document.getElementById("busanp10").innerHTML = 33;
-                    //alert(g2_pm10);
-                    if (g2_pm10 > 80) {
-                        $('#cai2').append("나쁨");
-                    } else if (g2_pm10 > 30) {
-                        $('#cai2').append("보통");
-                    } else {
-                        $('#cai2').append("좋음");
-                    }
-                    var gauge2;
-                    gauge2 = new JustGage({
-                    bindto: '#gauge2',
-                    id: "gauge2",
-                    value: g2_pm10,
-                    min: 0,
-                    max: 100,
-                    donut: true,
-                    gaugeWidthScale: 0.6,
-                    counter: true,
-                    hideInnerShadow: true,
-                    customSectors: [{"lo":0,"hi":30,"color":"#5AAEFF"},
-                                {"lo":31,"hi":80,"color":"#9BFF94"},
-                                {"lo":81,"hi":100,"color":"#FF5A5A"}],
-               	    levelColorsGradient: false                 
-                    });
-                }
-            });
-    }
-    xmlLoader2();
-    </script>
-
-	<script>
-	function xmlLoader(){
-            var g4_pm25 = 60;
-            var result2 = Math.floor(Math.random() * 1000);
-			
-			
-            $.ajax({
-                url: 'http://opendata.busan.go.kr/openapi/service/AirQualityInfoService/getAirQualityInfoClassifiedByStation?ServiceKey=XvbbhgxojihU59b%2BzI27UNzRTxEsexjg3suPdRbu%2F5rSpomO7FP7SOjZVpkM7E9JwzLeXf4GY49rLLHE8kgzgQ%3D%3D&numOfRows=1&pageSize=1&pageNo=1&idx=221152&Date_hour=201410' + result2,
-                dataType: "xml",
-                type: 'GET',
-                cache: false,
-                success: function(res) {
-                    var myXML = res.responseText;
-                    // This is the part xml2Json comes in.
-                    var JSONConvertedXML = $.xml2json(myXML);
-					
-                    g4_pm25 = JSONConvertedXML.body.items.item.pm25;               
-                    document.getElementById("busanp2").innerHTML = 10;
-
-                    if (g4_pm25 > 50) {
-                        $('#cai4').append("나쁨");
-                    } else if (g4_pm25 > 15) {
-                        $('#cai4').append("보통");
-                    } else {
-                        $('#cai4').append("좋음");
-                    }                   
-                    var gauge4;
-                    gauge4 = new JustGage({
-                    bindto: '#gauge4',
-                    id: "gauge4",
-                    value: g4_pm25,
-                    min: 0,
-                    max: 100,
-                    donut: true,
-                    gaugeWidthScale: 0.6,
-                    counter: true,
-                    hideInnerShadow: true,
-                    customSectors: [{"lo":0,"hi":15,"color":"#5AAEFF"},
-                                    {"lo":16,"hi":50,"color":"#9BFF94"},
-                                    {"lo":51,"hi":100,"color":"#FF5A5A"}],
-                    levelColorsGradient: false
-                    });
-                }
-            });
-    }
-    xmlLoader();
-    </script>
-    <!-- map script start--------------------------------------------------------------------------->
- <script type="text/javascript">
-    //var map = new L.map('map', {center: new L.LatLng(37.488374, 127.033168), zoom: 17});
-    var map = new L.map('map', {center: new L.LatLng(35.1348, 129.1029), zoom: 17});
-    var googleLayer = new L.Google('ROADMAP');
-    map.addLayer(googleLayer);
-    
-    
-          
-            var map_J_PM10;
-            var map_J_PM25;
-            var result5 = Math.floor(Math.random() * 1000);
-            $.ajax({
-                url: 'http://opendata.busan.go.kr/openapi/service/AirQualityInfoService/getAirQualityInfoClassifiedByStation?ServiceKey=XvbbhgxojihU59b%2BzI27UNzRTxEsexjg3suPdRbu%2F5rSpomO7FP7SOjZVpkM7E9JwzLeXf4GY49rLLHE8kgzgQ%3D%3D&numOfRows=1&pageSize=1&pageNo=1&idx=221221&Date_hour=201410' + result5,
-                dataType: "xml",
-                type: 'GET',
-                cache: false,
-                success: function(res) {
-                    var myXML = res.responseText;
-                    // This is the part xml2Json comes in.
-                    var JSONConvertedXML = $.xml2json(myXML);
-                    //map_J_PM10 = JSONConvertedXML.body.items.item.pm10;
-                    //map_J_PM25 = JSONConvertedXML.body.items.item.pm25; 
-					map_J_PM10 = 20;
-					map_J_PM25 = 20; 
-      var J_cl = '#FF5A5A';
-      var J_fcl = '#FF5A5A';
-      var J_mcia = '#FF5A5A';
-      if (map_J_PM10 > 80) {
-        J_cl = '#FF5A5A';
-        J_fcl = '#FF0000';
-        J_mcia = '나쁨';
-      } else if (map_J_PM10 > 30) {
-        J_cl = '#9BFF94';
-        J_fcl = '#41FF3A';   
-        J_mcia = '보통';     
-      } else {
-        J_cl = '#5AAEFF';
-        J_fcl = '#0054FF';  
-        J_mcia = '좋음';      
-      }
-       var circle6 = L.circle([35.164934, 129.071339], 12, {
-        color: J_cl,
-        Opacity: 0.1,
-        fillColor: J_fcl,
-        fillOpacity: 0.4
-      }).addTo(map);     
-      circle6.bindPopup('<b>'+'TALKTALK(실내환경)'+'</b>'+'<br>'+'현재 pm10 : ' + map_J_PM10+'<br>'+'현재 pm25 : ' + map_J_PM25+'<br>'+J_mcia);
-            var map_Y_PM10;
-            var map_Y_PM25;
-            var result6 = Math.floor(Math.random() * 1000);
-            $.ajax({
-                url: 'http://opendata.busan.go.kr/openapi/service/AirQualityInfoService/getAirQualityInfoClassifiedByStation?ServiceKey=XvbbhgxojihU59b%2BzI27UNzRTxEsexjg3suPdRbu%2F5rSpomO7FP7SOjZVpkM7E9JwzLeXf4GY49rLLHE8kgzgQ%3D%3D&numOfRows=1&pageSize=1&pageNo=1&idx=221221&Date_hour=201410' + result6,
-                dataType: "xml",
-                type: 'GET',
-                cache: false,
-                success: function(res) {
-                    var myXML = res.responseText;
-                    // This is the part xml2Json comes in.
-                    var JSONConvertedXML = $.xml2json(myXML); 
-                    //map_Y_PM10 = JSONConvertedXML.body.items.item.pm10;
-                    //map_Y_PM25 = JSONConvertedXML.body.items.item.pm25;
-					map_Y_PM10 = 90;
-					map_Y_PM25 = 90;
-              var Y_cl = '#FF5A5A';
-              var Y_fcl = '#FF5A5A';
-              var Y_mcia = '#FF5A5A';
-              if (map_Y_PM10 > 80) {
-              Y_cl = '#FF5A5A';
-              Y_fcl = '#FF0000';
-              Y_mcia = '나쁨'; 
-              } else if (map_Y_PM10 > 30) {
-              Y_cl = '#9BFF94';
-              Y_fcl = '#41FF3A';  
-              Y_mcia = '보통';      
-              }else {
-              Y_cl = '#5AAEFF';
-              Y_fcl = '#0054FF'; 
-              Y_mcia = '좋음';       
-             }
-      var circle7 = L.circle([35.165223, 129.070819], 12, {
-        color: Y_cl,
-        Opacity: 0.1,
-        fillColor: Y_fcl,
-        fillOpacity: 0.4
-      }).addTo(map);
-      circle7.bindPopup('<b>'+'실외환경'+'</b>'+'<br>'+'현재 pm10 : ' + map_Y_PM10+'<br>'+'현재 pm25 : ' + map_Y_PM25+'<br>'+Y_mcia);
-          }
-      });
-          }
-      });
-  </script> 
-	<script>
+		<script>
     var g1;
     document.addEventListener("DOMContentLoaded", function(event) {
         g1 = new JustGage({
@@ -662,7 +478,191 @@
     
 	<!--gauge-->    
       
-           
+   <script>
+    function xmlLoader2(){
+            var g2_pm10 = 30;  
+            var result1 = Math.floor(Math.random() * 1000);
+            $.ajax({
+                url: 'http://opendata.busan.go.kr/openapi/service/AirQualityInfoService/getAirQualityInfoClassifiedByStation?ServiceKey=XvbbhgxojihU59b%2BzI27UNzRTxEsexjg3suPdRbu%2F5rSpomO7FP7SOjZVpkM7E9JwzLeXf4GY49rLLHE8kgzgQ%3D%3D&numOfRows=1&pageSize=1&pageNo=1&idx=221152&Date_hour=201410' + result1,
+                dataType: "xml",
+                type: 'GET',
+                cache: false,
+                success: function(res) {
+                    var myXML = res.responseText;
+                    // This is the part xml2Json comes in.
+                    var JSONConvertedXML = $.xml2json(myXML);
+                    g2_pm10 = JSONConvertedXML.body.items.item.pm10;
+                    document.getElementById("busanp10").innerHTML = 33;
+                    //alert(g2_pm10);
+                    if (g2_pm10 > 80) {
+                        $('#cai2').append("나쁨");
+                    } else if (g2_pm10 > 30) {
+                        $('#cai2').append("보통");
+                    } else {
+                        $('#cai2').append("좋음");
+                    }
+                    var gauge2;
+                    gauge2 = new JustGage({
+                    bindto: '#gauge2',
+                    id: "gauge2",
+                    value: g2_pm10,
+                    min: 0,
+                    max: 100,
+                    donut: true,
+                    gaugeWidthScale: 0.6,
+                    counter: true,
+                    hideInnerShadow: true,
+                    customSectors: [{"lo":0,"hi":30,"color":"#5AAEFF"},
+                                {"lo":31,"hi":80,"color":"#9BFF94"},
+                                {"lo":81,"hi":100,"color":"#FF5A5A"}],
+               	    levelColorsGradient: false                 
+                    });
+                }
+            });
+    }
+    xmlLoader2();
+    </script>
+
+	<script>
+	function xmlLoader(){
+            var g4_pm25 = 60;
+            var result2 = Math.floor(Math.random() * 1000);
+			
+			
+            $.ajax({
+                url: 'http://opendata.busan.go.kr/openapi/service/AirQualityInfoService/getAirQualityInfoClassifiedByStation?ServiceKey=XvbbhgxojihU59b%2BzI27UNzRTxEsexjg3suPdRbu%2F5rSpomO7FP7SOjZVpkM7E9JwzLeXf4GY49rLLHE8kgzgQ%3D%3D&numOfRows=1&pageSize=1&pageNo=1&idx=221152&Date_hour=201410' + result2,
+                dataType: "xml",
+                type: 'GET',
+                cache: false,
+                success: function(res) {
+                    var myXML = res.responseText;
+                    // This is the part xml2Json comes in.
+                    var JSONConvertedXML = $.xml2json(myXML);
+					
+                    g4_pm25 = JSONConvertedXML.body.items.item.pm25;               
+                    document.getElementById("busanp2").innerHTML = 10;
+
+                    if (g4_pm25 > 50) {
+                        $('#cai4').append("나쁨");
+                    } else if (g4_pm25 > 15) {
+                        $('#cai4').append("보통");
+                    } else {
+                        $('#cai4').append("좋음");
+                    }                   
+                    var gauge4;
+                    gauge4 = new JustGage({
+                    bindto: '#gauge4',
+                    id: "gauge4",
+                    value: g4_pm25,
+                    min: 0,
+                    max: 100,
+                    donut: true,
+                    gaugeWidthScale: 0.6,
+                    counter: true,
+                    hideInnerShadow: true,
+                    customSectors: [{"lo":0,"hi":15,"color":"#5AAEFF"},
+                                    {"lo":16,"hi":50,"color":"#9BFF94"},
+                                    {"lo":51,"hi":100,"color":"#FF5A5A"}],
+                    levelColorsGradient: false
+                    });
+                }
+            });
+    }
+    xmlLoader();
+    </script>
+    <!-- map script start--------------------------------------------------------------------------->
+ <script type="text/javascript">
+    //var map = new L.map('map', {center: new L.LatLng(37.488374, 127.033168), zoom: 17});
+    var map = new L.map('map', {center: new L.LatLng(35.1348, 129.1029), zoom: 17});
+    var googleLayer = new L.Google('ROADMAP');
+    map.addLayer(googleLayer);
+    
+    
+          
+            var map_J_PM10;
+            var map_J_PM25;
+            var result5 = Math.floor(Math.random() * 1000);
+            $.ajax({
+                url: 'http://opendata.busan.go.kr/openapi/service/AirQualityInfoService/getAirQualityInfoClassifiedByStation?ServiceKey=XvbbhgxojihU59b%2BzI27UNzRTxEsexjg3suPdRbu%2F5rSpomO7FP7SOjZVpkM7E9JwzLeXf4GY49rLLHE8kgzgQ%3D%3D&numOfRows=1&pageSize=1&pageNo=1&idx=221221&Date_hour=201410' + result5,
+                dataType: "xml",
+                type: 'GET',
+                cache: false,
+                success: function(res) {
+                    var myXML = res.responseText;
+                    // This is the part xml2Json comes in.
+                    var JSONConvertedXML = $.xml2json(myXML);
+                    //map_J_PM10 = JSONConvertedXML.body.items.item.pm10;
+                    //map_J_PM25 = JSONConvertedXML.body.items.item.pm25; 
+					map_J_PM10 = 20;
+					map_J_PM25 = 20; 
+      var J_cl = '#FF5A5A';
+      var J_fcl = '#FF5A5A';
+      var J_mcia = '#FF5A5A';
+      if (map_J_PM10 > 80) {
+        J_cl = '#FF5A5A';
+        J_fcl = '#FF0000';
+        J_mcia = '나쁨';
+      } else if (map_J_PM10 > 30) {
+        J_cl = '#9BFF94';
+        J_fcl = '#41FF3A';   
+        J_mcia = '보통';     
+      } else {
+        J_cl = '#5AAEFF';
+        J_fcl = '#0054FF';  
+        J_mcia = '좋음';      
+      }
+       var circle6 = L.circle([35.164934, 129.071339], 12, {
+        color: J_cl,
+        Opacity: 0.1,
+        fillColor: J_fcl,
+        fillOpacity: 0.4
+      }).addTo(map);     
+      circle6.bindPopup('<b>'+'TALKTALK(실내환경)'+'</b>'+'<br>'+'현재 pm10 : ' + map_J_PM10+'<br>'+'현재 pm25 : ' + map_J_PM25+'<br>'+J_mcia);
+            var map_Y_PM10;
+            var map_Y_PM25;
+            var result6 = Math.floor(Math.random() * 1000);
+            $.ajax({
+                url: 'http://opendata.busan.go.kr/openapi/service/AirQualityInfoService/getAirQualityInfoClassifiedByStation?ServiceKey=XvbbhgxojihU59b%2BzI27UNzRTxEsexjg3suPdRbu%2F5rSpomO7FP7SOjZVpkM7E9JwzLeXf4GY49rLLHE8kgzgQ%3D%3D&numOfRows=1&pageSize=1&pageNo=1&idx=221221&Date_hour=201410' + result6,
+                dataType: "xml",
+                type: 'GET',
+                cache: false,
+                success: function(res) {
+                    var myXML = res.responseText;
+                    // This is the part xml2Json comes in.
+                    var JSONConvertedXML = $.xml2json(myXML); 
+                    //map_Y_PM10 = JSONConvertedXML.body.items.item.pm10;
+                    //map_Y_PM25 = JSONConvertedXML.body.items.item.pm25;
+					map_Y_PM10 = 90;
+					map_Y_PM25 = 90;
+              var Y_cl = '#FF5A5A';
+              var Y_fcl = '#FF5A5A';
+              var Y_mcia = '#FF5A5A';
+              if (map_Y_PM10 > 80) {
+              Y_cl = '#FF5A5A';
+              Y_fcl = '#FF0000';
+              Y_mcia = '나쁨'; 
+              } else if (map_Y_PM10 > 30) {
+              Y_cl = '#9BFF94';
+              Y_fcl = '#41FF3A';  
+              Y_mcia = '보통';      
+              }else {
+              Y_cl = '#5AAEFF';
+              Y_fcl = '#0054FF'; 
+              Y_mcia = '좋음';       
+             }
+      var circle7 = L.circle([35.165223, 129.070819], 12, {
+        color: Y_cl,
+        Opacity: 0.1,
+        fillColor: Y_fcl,
+        fillOpacity: 0.4
+      }).addTo(map);
+      circle7.bindPopup('<b>'+'실외환경'+'</b>'+'<br>'+'현재 pm10 : ' + map_Y_PM10+'<br>'+'현재 pm25 : ' + map_Y_PM25+'<br>'+Y_mcia);
+          }
+      });
+          }
+      });
+  </script> 
+        
 <!-- map script end ---------------------------------------------------------------------------->
 	<div>
     <p id="pm2"></p>
