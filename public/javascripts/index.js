@@ -7,7 +7,9 @@ $(document).ready(function () {
       rpmData=[],
       rpm2Data=[];
   var pm10Data = [],
-      pm25Data = [];
+      pm25Data = [],
+      busp2Data = [],
+      busp1Data = [];
   var result;
   var humilength = humidityData.length;
   var templength = temperatureData.length;
