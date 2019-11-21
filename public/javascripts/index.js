@@ -5,7 +5,8 @@ $(document).ready(function () {
       pm2Data = [],
       pm10Data = [],
       rpmData=[],
-      rpm2Data=[];
+      rpm2Data=[],
+      moveData=[];
   var pm10Data = [],
       pm25Data = [],
       busp2Data = [],
@@ -16,6 +17,8 @@ $(document).ready(function () {
   var pm10length = pm10Data.length;
   var pm25length = pm25Data.length;
   var rpmlength = rpmData.length;
+  var rpm2length = rpm2Data.length;
+  var movelength = moveData.length;
  
    var aaaa = 50;
   //---------yanji end 1/2------------
@@ -346,6 +349,9 @@ if(obj.params.Temperature>30){
  //20170913 pm Data push    
       pm10Data.push(obj.params.pm10);
       pm25Data.push(obj.params.pm2);
+      rpmData.push(obj.params.rpm);
+      rpm2Data.push(obj.params.rpm2);
+      moveData.push(obj.params.move);
     
       //android 20170912 23:29
 //       if(humilength==0 || templength == 0 || pm10length ==0 || pm25length ==0){
